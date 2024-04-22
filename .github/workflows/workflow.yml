@@ -1,21 +1,25 @@
-name: Test my self-hosted runner
+name: Greeting data academy
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
-      - "main"
+    branches:
+      -"main"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  DAY_OF_WEEK: <<FILL_ME>>
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  greeting_job:
     runs-on: self-hosted
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    env:
+      GREETING: Hello
     steps:
-      # Runs a single command using shell
-      - name: Run a one-line script
-        run: echo Hello, world
+    - name: Get current date
+        id: date
+        run: echo "DAY_OF_WEEK=$(date +%A)" >> $GITHUB_ENV
+
+      - name: "Say 'Hello Data Academy 7th edition, this is <today's weekday> 's first exercise! I'm <MY_NAME>!'"
+        run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm ${{ github.actor }}!"
+        env:
+          ACADEMY_TYPE: Data
+
