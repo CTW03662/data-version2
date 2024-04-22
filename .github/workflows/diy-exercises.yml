@@ -3,7 +3,7 @@ name: Greeting data academy
 on:
   push:
     branches:
-      -"main"
+      - "main"
 
 env:
   DAY_OF_WEEK: Monday
