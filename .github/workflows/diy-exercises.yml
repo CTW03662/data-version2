@@ -9,6 +9,17 @@ env:
   DAY_OF_WEEK: Monday
 
 jobs:
+  week_job:
+    runs-on: self-hosted
+    needs: greeting_job
+    env:
+      WHAT: pancakes
+      WITH: chocolate
+      
+    steps:
+      - name: "week job"
+      run: echo "I like $WHAT with $WITH!"
+
   greeting_job:
     runs-on: self-hosted
     env:
