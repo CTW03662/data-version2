@@ -31,7 +31,7 @@ resource "aws_iam_policy" "example" {
         Action = [
           "s3:*",
         ]
-        Resource = ["*"]
+        Resource = [data.aws_s3_bucket.your_bucket.arn]
       }
     ]
   })
