@@ -36,7 +36,7 @@ jobs:
           # skip_check: CKV_AWS_2 # optional: skip a specific check_id. can be comma separated list
           # quiet: true # optional: display only failed checks
           # soft_fail: true # optional: do not return an error code if there are failed checks
-          # framework: terraform # optional: run only on a specific infrastructure {cloudformation,terraform,kubernetes,all}
+          framework: terraform # optional: run only on a specific infrastructure {cloudformation,terraform,kubernetes,all}
           # skip_framework: terraform # optional: skip a specific infrastructure {cloudformation,terraform,kubernetes,all}
           # skip_cve_package: CVE_2019_8331 # optional: skip a specific CVE package in SCA scans, can be comma separated list
           # output_format: sarif # optional: the output format, one of: cli, json, junitxml, github_failed_only, or sarif. Default: sarif
