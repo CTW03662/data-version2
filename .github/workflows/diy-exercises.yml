@@ -1,9 +1,7 @@
 name: Greeting data academy
 
 on:
-  push:
-    branches-ignore:
-      - main
+  push
     
 
 env:
