@@ -1,8 +1,8 @@
 name: Greeting data academy
 
 on:
-  push:
-    branches: [main]
+  push
+    
 
 env:
   DAY_OF_WEEK: Monday
@@ -14,7 +14,6 @@ jobs:
     env:
       WHAT: pancakes
       WITH: chocolate
-      
     steps:
       - name: "week job"
       run: echo "I like $WHAT with $WITH!"
