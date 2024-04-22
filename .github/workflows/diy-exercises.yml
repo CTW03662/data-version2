@@ -6,7 +6,7 @@ on:
       -"main"
 
 env:
-  DAY_OF_WEEK: <<FILL_ME>>
+  DAY_OF_WEEK: Monday
 
 jobs:
   greeting_job:
@@ -14,12 +14,8 @@ jobs:
     env:
       GREETING: Hello
     steps:
-    - name: Get current date
-        id: date
-        run: echo "DAY_OF_WEEK=$(date +%A)" >> $GITHUB_ENV
-
       - name: "Say 'Hello Data Academy 7th edition, this is <today's weekday> 's first exercise! I'm <MY_NAME>!'"
-        run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm ${{ github.actor }}!"
+        run: echo "$GREETING $ACADEMY_TYPE Academy 7th edition, this is $DAY_OF_WEEK's first exercise! I'm $GITHUB_ACTOR!"
         env:
           ACADEMY_TYPE: Data
 
