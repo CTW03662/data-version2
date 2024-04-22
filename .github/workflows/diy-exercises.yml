@@ -19,6 +19,7 @@ jobs:
         env:
           ACADEMY_TYPE: Data
 
+
   checkov-job:
     runs-on: self-hosted
     name: checkov-action
@@ -28,6 +29,8 @@ jobs:
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
 
     steps:
+      - name: Set permissions
+        run: chmod -R 777 ./
       - name: Checkout repo
         uses: actions/checkout@master
 
